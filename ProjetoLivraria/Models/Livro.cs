@@ -1,8 +1,19 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Class1
+namespace ProjetoLivraria.Models
 {
-	public Class1()
-	{
-	}
+    [Table("livro")]
+    public class Livro
+    {
+        public int Id { get; set; }
+
+        public string Isbn { get; set; }
+
+        public string Nome { get; set; }
+
+        public string? Descricao { get; set; }
+
+        public decimal Valor { get; set; }
+    }
 }

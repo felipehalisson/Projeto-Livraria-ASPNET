@@ -1,8 +1,18 @@
-﻿using System;
+﻿using Systemusing Microsoft.EntityFrameworkCore;
+using ProjetoLivraria.Models;
 
-public class Class1
+namespace ProjetoLivraria.Data
 {
-	public Class1()
-	{
-	}
+    public class LivrariaContext : DbContext
+    {
+        public LivrariaContext(
+            DbContextOptions<LivrariaContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Login> Login { get; set; }
+
+        public DbSet<Livro> Livro { get; set; }
+    }
 }
