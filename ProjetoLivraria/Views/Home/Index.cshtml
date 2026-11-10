@@ -1,8 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    var nomeUsuario = Context.Session.GetString("UsuarioNome");
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-4">
+    <h1 class="display-5">Bem-vindo, @nomeUsuario!</h1>
+    <p class="lead">Gerencie o acervo da livraria.</p>
 </div>
