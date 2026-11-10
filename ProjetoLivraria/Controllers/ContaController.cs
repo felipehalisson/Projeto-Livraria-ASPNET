@@ -23,7 +23,7 @@ namespace ProjetoLivraria.Controllers
                 return View(model);
             }
 
-            var usuario = await db.Logins.FirstOrDefaultAsync(u => u.Email == model.Email);
+            var usuario = await db.Logins.FirstOrDefaultAsync(u => u.Email == model.Email.Trim());
 
             if (usuario is null ||
                 hasher.VerifyHashedPassword(usuario, usuario.SenhaHash, model.Senha) == PasswordVerificationResult.Failed)
