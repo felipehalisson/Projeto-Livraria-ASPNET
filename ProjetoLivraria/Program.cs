@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProjetoLivraria.Data;
+using ProjetoLivraria.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddDbContext<LivrariaContext>(options =>
         )
     )
 );
+
+// Hash de senhas (necessário para o ContaController)
+builder.Services.AddScoped<IPasswordHasher<Login>, PasswordHasher<Login>>();
 
 builder.Services.AddDistributedMemoryCache();
 
