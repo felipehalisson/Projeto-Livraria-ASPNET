@@ -1,0 +1,45 @@
+﻿@model ProjetoLivraria.Models.Livro
+@{
+    ViewData["Title"] = "Cadastrar Livro";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h1 class="mb-4">Cadastrar Livro</h1>
+
+        <form asp-controller="Livro" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Isbn" class="form-label"></label>
+                <input asp-for="Isbn" class="form-control" />
+                <span asp-validation-for="Isbn" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Nome" class="form-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Descricao" class="form-label"></label>
+                <textarea asp-for="Descricao" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Valor" class="form-label"></label>
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-link">Voltar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
