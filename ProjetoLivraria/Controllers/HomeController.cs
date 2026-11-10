@@ -8,6 +8,11 @@ namespace ProjetoLivraria.Controllers
     {
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("UsuarioNome") is null)
+            {
+                return RedirectToAction("Login", "Conta");
+            }
+
             return View();
         }
 
