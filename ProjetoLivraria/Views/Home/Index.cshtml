@@ -4,6 +4,11 @@
 }
 
 <div class="text-center mt-4">
+    @if (TempData["Mensagem"] is string mensagem)
+    {
+        <div class="alert alert-success">@mensagem</div>
+    }
+
     <h1 class="display-5">Bem-vindo, @nomeUsuario!</h1>
     <p class="lead">Gerencie o acervo da livraria.</p>
 
